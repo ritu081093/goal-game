@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.event.KeyListener;
 import java.util.*;
 import java.util.Timer;
 
@@ -23,10 +24,13 @@ public class Demo {
         mainPanel.add(a);
 
 
-        window.setVisible(true);
-
         Timer timer = new Timer();
         timer.scheduleAtFixedRate(new BallMover(a), 10, 5);
 
+        mainPanel.setFocusable(true);
+        mainPanel.addKeyListener(a);
+
+
+        window.setVisible(true);
     }
 }
